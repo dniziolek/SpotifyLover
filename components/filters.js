@@ -26,8 +26,8 @@ export class Filters extends React.Component {
             <Wrapper>
                 <FiltersHeader>Wybierz filtry: </FiltersHeader>
                 <FiltersRows>
-                    <FilterRow filterType={true}/>
-                    <FilterRow filterType={false}/>
+                    <FilterRow isFirstRow={true}/>
+                    <FilterRow isFirsRow={false}/>
                 </FiltersRows>
             </Wrapper>
         )

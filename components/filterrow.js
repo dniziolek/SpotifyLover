@@ -50,7 +50,7 @@ export class FilterRow extends React.Component {
     }
 
     render() {
-        if(this.props.filterType === true) {
+        if(this.props.isFirstRow === true) {
             return (
                 <Wrapper>
                     <ButtonFilter onClick={() => this.toggleFiltersRow(1.1, true)} active={this.isActive(1.1, true)}>
