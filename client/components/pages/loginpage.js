@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import img from '../../img/loginBackground.jpg'
-import {LoginButton} from "../loginbutton";
+import {LoginButton} from "../buttons/loginbutton";
 
 const ImgWrapper = styled.div`
     display: ${props => props.active ? 'block' : 'none'};
@@ -28,9 +28,9 @@ const Img = styled.img`
 export class LoginPage extends React.Component {
     render() {
         return (
-            <ImgWrapper active={this.props.active}>
+            <ImgWrapper active={!this.props.active}>
                 <Img src={img}/>
-                <LoginButton toggleModal={this.props.toggleModal}/>
+                <LoginButton />
             </ImgWrapper>
         )
     }

@@ -3,12 +3,9 @@ import styled from 'styled-components';
 
 const Button = styled.button`
     display: block;
-    position: relative;
     top: 1000px;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: 500px;
-    padding: 19px 56px 21px;
+    padding: 10px 50px;
     color: #fff;
     background-color: #1db954;
     border: none;
@@ -16,8 +13,12 @@ const Button = styled.button`
     outline: none;
 `;
 
-export class LoginButton extends React.Component {
+export class NowPlayingButton extends React.Component {
     render() {
-        return <Button onClick={this.props.toggleModal}>LOG IN WITH YOUR SPOTIFY ACCOUNT</Button>
+        return (
+            <Button onClick={() => this.props.getNowPlaying()}>
+                Check Now Playing!
+            </Button>
+        )
     }
 }
