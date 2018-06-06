@@ -13,13 +13,20 @@ class AppMainPage extends React.Component {
         this.state = {
             loggedIn: !!params.access_token,
             nowPlaying: {
-                name: 'Click the button to check Now Playing Music!',
-                image: ''
+                name: '',
+                image: '',
+                artist:''
             }
         };
         if(params.access_token) {
             spotifyWebApi.setAccessToken(params.access_token)
         }
+
+        this.getNowPlaying = this.getNowPlaying.bind(this);
+    }
+
+    componentWillMount() {
+        this.getNowPlaying();
     }
 
     getHashParams() {
@@ -38,9 +45,11 @@ class AppMainPage extends React.Component {
                 this.setState({
                     nowPlaying: {
                         name: response.item.name,
-                        image: response.item.album.images[0].url
+                        image: response.item.album.images[0].url,
+                        artist: response.item.artists[0].name
                     }
                 })
+                {console.log(response.item)}
             })
     }
 
@@ -49,8 +58,7 @@ class AppMainPage extends React.Component {
             <div>
                 <LoginPage active={this.state.loggedIn} />
                 <RegularPage active={this.state.loggedIn}
-                             nowPlaying={this.state.nowPlaying}
-                             getNowPlaying={() => this.getNowPlaying()} />
+                             nowPlaying={this.state.nowPlaying}/>
             </div>
         )
     }

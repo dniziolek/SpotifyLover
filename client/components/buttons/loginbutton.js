@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Link = styled.a`
+    text-decoration: none;
+`;
+
 export const Button = styled.button`
     display: block;
     position: relative;
@@ -19,9 +23,9 @@ export const Button = styled.button`
 export class LoginButton extends React.Component {
     render() {
         return (
-            <a href="http://localhost:8888" >
+            <Link href="http://localhost:8888" >
                 <Button>LOG IN WITH YOUR SPOTIFY ACCOUNT</Button>
-            </a>
+            </Link>
         )
     }
 }

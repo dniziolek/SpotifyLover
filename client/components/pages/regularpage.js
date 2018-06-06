@@ -29,8 +29,7 @@ export class RegularPage extends React.Component {
                     <Header>Sprawdź swoją ulubioną muzykę na Spotify!</Header>
                     <Filters />
                 </WrapperSmall>
-                <NowPlaying nowPlaying={this.props.nowPlaying}
-                            getNowPlaying={() => this.props.getNowPlaying()} />
+                <NowPlaying nowPlaying={this.props.nowPlaying} />
             </WrapperBig>
         )
     }
