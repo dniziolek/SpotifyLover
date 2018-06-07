@@ -27,6 +27,7 @@ const TextWrapper = styled.div`
     align-self: center;
     color: white;
     text-align: right;
+    font-family: Oswald;
 `;
 
 export class NowPlaying extends React.Component {

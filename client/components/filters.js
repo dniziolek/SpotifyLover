@@ -4,20 +4,22 @@ import {FilterRow} from "./filterrow";
 
 const Wrapper = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-evenly;
+    align-items: flex-end;
     font-size: 30px;
 `;
 
 const FiltersHeader = styled.span `
     color: white;
     font-family: Oswald;
+    margin-right: 20px;
 `;
 
 const FiltersRows = styled.div `
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 `;
 
 export class Filters extends React.Component {

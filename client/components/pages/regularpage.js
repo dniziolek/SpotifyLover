@@ -26,7 +26,7 @@ export class RegularPage extends React.Component {
             <WrapperBig active={!this.props.active}>
                 <WrapperSmall>
                     <ImgBackground/>
-                    <Header>Sprawdź swoją ulubioną muzykę na Spotify!</Header>
+                    <Header>Sprawdź swoją ulubioną muzykę <br/> na Spotify!</Header>
                     <Filters />
                 </WrapperSmall>
                 <NowPlaying nowPlaying={this.props.nowPlaying} />
