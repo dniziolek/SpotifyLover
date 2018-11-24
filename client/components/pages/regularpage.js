@@ -1,35 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ImgBackground} from "../imagebackground";
-import {Filters} from "../filters";
-import {NowPlaying} from "../nowplaying";
-
+import {Link} from "react-router-dom";
 
 const WrapperBig = styled.div`
-    display: ${props => props.active ? 'none' : 'flex'};
-    flex-direction: column;
-`;
-const WrapperSmall = styled.div`
-    flex-direction: column;
+    background: white;
 `;
 
-const Header = styled.h1`
-    align-self: center;
-    font-family: Oswald;
-    font-size: 50px;
+const LinkToFavourites = styled(Link)`
+s    color: black;
 `;
-
 
 export class RegularPage extends React.Component {
     render() {
         return (
-            <WrapperBig active={!this.props.active}>
-                <WrapperSmall>
-                    <ImgBackground/>
-                    <Header>Sprawdź swoją ulubioną muzykę <br/> na Spotify!</Header>
-                    <Filters />
-                </WrapperSmall>
-                <NowPlaying nowPlaying={this.props.nowPlaying} />
+            <WrapperBig>
+                <span>Not sure what do choose?</span><br/>
+                <LinkToFavourites to='/favourites'>
+                    <span>Check out your favourite music on Spotify!</span>
+                </LinkToFavourites>
             </WrapperBig>
         )
     }

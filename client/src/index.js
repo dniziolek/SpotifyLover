@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {LoginPage} from '../components/pages/loginpage'
-import {RegularPage} from '../components/pages/regularpage';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
 import Spotify from 'spotify-web-api-js';
+
+import {FavouritesPage} from "../components/pages/favouritespage";
+import {LoginPage} from "../components/pages/loginpage";
+import {RegularPage} from "../components/pages/regularpage";
 
 const spotifyWebApi = new Spotify();
 
@@ -55,11 +59,17 @@ class AppMainPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <LoginPage active={this.state.loggedIn} />
-                <RegularPage active={this.state.loggedIn}
-                             nowPlaying={this.state.nowPlaying}/>
-            </div>
+            <BrowserRouter>
+                <Switch>
+                    {this.state.loggedIn ?
+                        <Route exact path="/"
+                               component={props => <RegularPage active={this.state.loggedIn}/>}/>
+                        : <Route path="/"
+                               component={props => <LoginPage active={this.state.loggedIn}/>}/>}
+                    {this.state.loggedIn && <Route exact path='/favourites'
+                           component={props => <FavouritesPage nowPlaying={this.state.nowPlaying}/>}/>}
+                </Switch>
+            </BrowserRouter>
         )
     }
 }

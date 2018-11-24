@@ -4,7 +4,7 @@ import img from '../../img/loginBackground.jpg'
 import {LoginButton} from "../buttons/loginbutton";
 
 const ImgWrapper = styled.div`
-    display: ${props => props.active ? 'block' : 'none'};
+    display: block;
     position: fixed; 
     top: -50%; 
     left: -50%; 
@@ -28,7 +28,7 @@ const Img = styled.img`
 export class LoginPage extends React.Component {
     render() {
         return (
-            <ImgWrapper active={!this.props.active}>
+            <ImgWrapper>
                 <Img src={img}/>
                 <LoginButton />
             </ImgWrapper>
