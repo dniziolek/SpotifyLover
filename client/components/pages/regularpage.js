@@ -7,7 +7,7 @@ const WrapperBig = styled.div`
 `;
 
 const LinkToFavourites = styled(Link)`
-    text-decoration: none;
+s    color: black;
 `;
 
 export class RegularPage extends React.Component {

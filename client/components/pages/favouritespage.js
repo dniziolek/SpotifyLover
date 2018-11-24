@@ -1,5 +1,8 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+
 import styled from 'styled-components';
+
 import {ImgBackground} from "../imagebackground";
 import {Filters} from "../filters";
 import {NowPlaying} from "../nowplaying";
@@ -19,6 +22,10 @@ const Header = styled.h1`
     font-size: 50px;
 `;
 
+const LinkToMainPage = styled(Link)`
+    color: black;
+`;
+
 export class FavouritesPage extends React.Component {
     render() {
         return (
@@ -28,6 +35,7 @@ export class FavouritesPage extends React.Component {
                     <Header>Sprawdź swoją ulubioną muzykę <br/> na Spotify!</Header>
                     <Filters />
                 </WrapperSmall>
+                <LinkToMainPage to="/">Back to Karaoke</LinkToMainPage>
                 <NowPlaying nowPlaying={this.props.nowPlaying} />
             </WrapperBig>
         )
